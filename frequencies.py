@@ -4,13 +4,13 @@
 def frequencies(items):
     frequencies = {}
     for item in items:
-        if frequencies[item] > 0:
-            frequencies.update({item:0})
-        else:
+        if item in frequencies:
             frequencies[item] = frequencies[item] + 1
-
+        else:
+            frequencies.update({item:1})
+print(frequencies)
+print("do")
 
     # Your code goes here
-    print(frequencies)
+frequencies([1,1,1,1])
 
-frequencies([2,3,2])
