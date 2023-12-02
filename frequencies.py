@@ -2,15 +2,17 @@
 """ENTER YOUR SOLUTION HERE!"""
 
 def frequencies(items):
-    frequencies = {}
+    result_dict = {}
+
     for item in items:
-        if item in frequencies:
-            frequencies[item] = frequencies[item] + 1
-        else:
-            frequencies.update({item:1})
-print(frequencies)
-print("do")
+        # Convert non-string items to string for dictionary key
+        key = str(item) if not isinstance(item, str) else item
+
+        # Update the dictionary with the key and count its occurrences
+        result_dict[key] = result_dict.get(key, 0) + 1
+
+    return result_dict
 
     # Your code goes here
-frequencies([1,1,1,1])
+
 
